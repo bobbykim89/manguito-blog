@@ -54,6 +54,7 @@ module.exports = function(api) {
         posts: [...category.posts]
       });
     }
+  });
 
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
