@@ -1,34 +1,33 @@
 <template>
-  <Layout>
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-    <div v-for="post in posts" :key="post.node.id">
-      <h1>{{ post.node.title }}</h1>
-      <p>{{ post.node.content }}</p>
-      <g-image :src="post.node.cover.medium" width="500" />
-      <p>
-        {{ post.node.cover.medium }}
-      </p>
+  <Layout class="content">
+    <Hero :urls="heroImages" class="mb-5" />
+    <div class="container">
+      <blockquote class="blockquote text-center">
+        <p class="mb-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, facilis
+          animi temporibus pariatur ducimus quaerat aliquam iste consequatur
+          tempora? Eligendi error neque officia ipsum ducimus. Cum magnam vero
+          dolore corporis id dolorum atque ut voluptates laboriosam unde rerum
+          veniam, a quod nisi placeat fugit repellendus accusantium odit optio
+          esse blanditiis.
+        </p>
+        <hr class="w-25  hr-yellow" />
+      </blockquote>
+      <h1 class="display-4 mt-5 ml-2">Latest Posts</h1>
+      <b-card-group class="mt-4 mb-5">
+        <PostCard
+          v-for="post in posts.slice(0, 4)"
+          :key="post.node.id"
+          :post="post"
+          class="col-md-4 col-lg-3"
+        />
+      </b-card-group>
     </div>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
-      excepturi labore tempore expedita, et iste tenetur suscipit explicabo!
-      Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener"
-        >Gridsome Docs</a
-      >
-      <a
-        href="https://github.com/gridsome/gridsome"
-        target="_blank"
-        rel="noopener"
-        >GitHub</a
-      >
-    </p>
+    <Introduction />
+    <h1 class="display-1 text-center mb-5">
+      <span class="mr-3">Thanks for coming!</span>
+      <g-image src="~/assets/images/logo.png" width="80" class="mt-3 mt-md-0" />
+    </h1>
   </Layout>
 </template>
 
@@ -42,10 +41,11 @@
           content
           category {
             name
+            id
           }
           cover {
             large
-            medium
+            thumb
           }
         }
       }
@@ -54,29 +54,63 @@
 </page-query>
 
 <script>
-import axios from "axios";
+import Hero from '~/components/mainpage-parts/Hero.vue'
+import PostCard from '~/components/post-parts/PostCard.vue'
+import Introduction from '~/components/mainpage-parts/Introduction.vue'
 export default {
   metaInfo: {
-    title: "Hello, world!"
+    title: 'Manguito Blog - Home',
+  },
+  components: {
+    Hero,
+    PostCard,
+    Introduction,
   },
   data() {
     return {
-      posts: []
-    };
+      posts: [],
+      heroImages: [],
+    }
   },
-  async mounted() {
-    this.posts = this.$page.posts.edges;
-    console.log(this.posts);
-    const images = await axios.get(
-      "https://manguito-blog-backend.herokuapp.com/upload/files"
-    );
-    console.log(images);
-  }
-};
+  methods: {
+    getHeroImages() {
+      const posts = this.$page.posts.edges
+      const heroImages = posts.map((post) => {
+        return {
+          url: post.node.cover.large,
+          id: post.node.id,
+          title: post.node.title,
+        }
+      })
+      this.heroImages = heroImages
+    },
+  },
+  mounted() {
+    this.posts = this.$page.posts.edges
+    this.getHeroImages()
+  },
+}
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
+<style scoped>
+.content {
+  min-height: 85vh;
+}
+.hr-yellow {
+  border-top: 0.6rem solid;
+  color: rgb(253 224 71);
+}
+.display-4 {
+  display: inline-block;
+  padding: 0 1rem;
+  color: #fff;
+  background-color: #ffc107;
+  margin-top: 1rem;
+}
+
+@media (max-width: 576px) {
+  .display-1 {
+    font-size: 2.7rem;
+  }
 }
 </style>

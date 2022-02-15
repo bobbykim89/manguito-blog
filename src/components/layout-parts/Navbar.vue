@@ -1,0 +1,48 @@
+<template>
+  <b-navbar
+    toggleable="lg"
+    type="dark"
+    varianr="transparent"
+    class="sticky-nav w-100"
+  >
+    <b-navbar-brand href="/" class="ml-2">
+      <g-image src="~/assets/images/logo.png" width="30" class="mr-2" />
+      <span class="font-weight-bolder"> MANGUITO BLOG</span></b-navbar-brand
+    >
+    <b-navbar-toggle target="nav-collapse" class="ml-auto"></b-navbar-toggle>
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav class="ml-auto mr-lg-3">
+        <b-nav-item to="/" class="mx-auto mx-md-0"
+          ><span class="navlink-shadow">Home</span></b-nav-item
+        >
+        <b-nav-item to="/blog" class="mx-auto mx-md-0"
+          ><span class="navlink-shadow">Blog</span></b-nav-item
+        >
+        <b-nav-item to="/about" class="mx-auto mx-md-0"
+          ><span class="navlink-shadow">About</span></b-nav-item
+        >
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style scoped>
+.sticky-nav {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+}
+
+.navlink-shadow {
+  color: #fff;
+  text-shadow: #000 0px 0px 12px;
+}
+.navlink-shadow:hover {
+  color: #f2f2f2;
+}
+</style>
