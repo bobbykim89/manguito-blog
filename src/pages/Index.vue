@@ -44,6 +44,7 @@
             name
           }
           cover {
+            large
             medium
           }
         }
@@ -53,6 +54,7 @@
 </page-query>
 
 <script>
+import axios from "axios";
 export default {
   metaInfo: {
     title: "Hello, world!"
@@ -62,9 +64,13 @@ export default {
       posts: []
     };
   },
-  mounted() {
+  async mounted() {
     this.posts = this.$page.posts.edges;
     console.log(this.posts);
+    const images = await axios.get(
+      "https://manguito-blog-backend.herokuapp.com/upload/files"
+    );
+    console.log(images);
   }
 };
 </script>
