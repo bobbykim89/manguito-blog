@@ -9,7 +9,10 @@
       <g-image src="~/assets/images/logo.png" width="30" class="mr-2" />
       <span class="font-weight-bolder"> MANGUITO BLOG</span></b-navbar-brand
     >
-    <b-navbar-toggle target="nav-collapse" class="ml-auto"></b-navbar-toggle>
+    <b-navbar-toggle
+      target="nav-collapse"
+      class="ml-auto border-0"
+    ></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto mr-lg-3">
         <b-nav-item to="/" class="mx-auto mx-md-0"
@@ -44,5 +47,10 @@ export default {}
 }
 .navlink-shadow:hover {
   color: #f2f2f2;
+}
+@media (max-width: 576px) {
+  nav {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 }
 </style>
