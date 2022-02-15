@@ -13,12 +13,12 @@ module.exports = function(api) {
     const { data } = await axios.get(
       "https://manguito-blog-backend.herokuapp.com/posts"
     );
-    const collection = actions.addCollection({
+    const postCollection = actions.addCollection({
       typeName: "Post"
     });
 
     for (const post of data) {
-      collection.addNode({
+      postCollection.addNode({
         id: post.id,
         title: post.title,
         content: post.content,
@@ -38,9 +38,22 @@ module.exports = function(api) {
         },
         date: post.created_at
       });
-      console.log(post);
     }
-  });
+
+    const categories = await axios.get(
+      "https://manguito-blog-backend.herokuapp.com/categories"
+    );
+    const categoryCollection = actions.addCollection({
+      typeName: "Category"
+    });
+
+    for (const category of categories.data) {
+      categoryCollection.addNode({
+        id: category.id,
+        name: category.name,
+        posts: [...category.posts]
+      });
+    }
 
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
