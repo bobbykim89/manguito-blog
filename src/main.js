@@ -9,4 +9,9 @@ export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.use(BootstrapVue)
   Vue.component('Layout', DefaultLayout)
+  head.link.push({
+    rel: 'stylesheet', // Fontawesome CDN
+    href:
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
+  })
 }

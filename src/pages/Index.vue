@@ -22,6 +22,7 @@
           class="col-md-4 col-lg-3"
         />
       </b-card-group>
+      <hr class="w-25  hr-yellow" />
     </div>
     <Introduction />
     <h1 class="display-1 text-center mb-5">

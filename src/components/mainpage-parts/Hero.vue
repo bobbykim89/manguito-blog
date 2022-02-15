@@ -2,12 +2,17 @@
   <b-carousel
     v-model="slide"
     :interval="4000"
-    controls
     indicators
     background="#ababab"
     class="shadow"
   >
-    <b-carousel-slide v-for="url in urls" :key="url.id" :caption="url.title">
+    <b-carousel-slide v-for="url in urls" :key="url.id">
+      <h1 class="display-3">Welcome to Manguito Blog!</h1>
+      <p class="mb-md-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia at
+        laboriosam culpa, ab modi laudantium debitis ipsum atque obcaecati
+        animi.
+      </p>
       <template #img>
         <g-image
           :src="url.url"
@@ -47,6 +52,9 @@ export default {
     width: 100%;
     object-fit: cover;
     object-position: 0% 0%;
+  }
+  .display-3 {
+    font-size: 2.4rem;
   }
 }
 </style>

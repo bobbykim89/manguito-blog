@@ -8,7 +8,7 @@
       <b-card-text>
         <div class="text-right">
           <b-button
-            :to="`/post/category/${post.node.category.id}`"
+            :to="`/blog/category/${post.node.category.id}`"
             class="mb-2 display-inline-block text-right text-white"
             variant="warning"
           >
@@ -19,7 +19,10 @@
           {{ post.node.content.substring(0, 100) }}
         </p>
       </b-card-text>
-      <b-button :to="`/post/${post.node.id}`" variant="danger" class="w-100"
+      <b-button
+        :to="`/blog/post/${post.node.id}`"
+        variant="danger"
+        class="w-100"
         >Read Post</b-button
       >
     </b-card>
