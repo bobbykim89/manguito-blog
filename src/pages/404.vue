@@ -9,7 +9,7 @@
         />
         <h1>Woops!</h1>
         <h3 class="mb-5">This page does not exist!</h3>
-        <b-button class="button" variant="warning">
+        <b-button class="button" variant="danger">
           <a href="/">Go Back</a>
         </b-button>
       </div>
@@ -24,7 +24,7 @@ export default {}
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 .content-area {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #ffc107;
   min-height: 85vh;
   font-family: 'Permanent Marker', cursive;
 }
