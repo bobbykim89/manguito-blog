@@ -7,7 +7,9 @@
   >
     <b-navbar-brand href="/" class="ml-2">
       <g-image src="~/assets/images/logo.png" width="30" class="mr-2" />
-      <span class="font-weight-bolder"> MANGUITO BLOG</span></b-navbar-brand
+      <span class="font-weight-bolder navlink-shadow">
+        MANGUITO BLOG</span
+      ></b-navbar-brand
     >
     <b-navbar-toggle
       target="nav-collapse"
