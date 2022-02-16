@@ -8,4 +8,8 @@ module.exports = {
   siteName: 'Manguito Blog',
   plugins: [],
   icon: './src/favicon.png',
+  templates: {
+    Post: '/blog/post/:id',
+    Category: '/blog/category/:categoryId',
+  },
 }

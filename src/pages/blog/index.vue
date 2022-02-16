@@ -4,7 +4,7 @@
       <SearchBar @filter="getQuery" />
       <div class="container">
         <div class="row my-5">
-          <div class="col-lg-9">
+          <div class="col-lg-9 order-2 order-md-1">
             <b-card-group v-if="getPosts">
               <PostCard
                 v-for="post in getPosts"
@@ -14,7 +14,9 @@
               />
             </b-card-group>
           </div>
-          <div class="col-lg-3">Category goes here</div>
+          <div class="col-lg-3 order-1 order-md-2">
+            <CategoryBox :categories="categories" />
+          </div>
         </div>
       </div>
     </div>
@@ -39,28 +41,44 @@
         }
       }
     }
+    categories: allCategory (sortBy: "date", order: ASC) {
+    edges {
+      node {
+        name
+        id
+      }
+    }
   }
+  }
+
 </page-query>
 
 <script>
 import SearchBar from '~/components/post-parts/SearchBar.vue'
 import PostCard from '~/components/post-parts/PostCard'
+import CategoryBox from '~/components/post-parts/CategoryBox.vue'
 export default {
   metaInfo: {
     title: 'Manguito Blog - Blog',
+    categories: [],
   },
   components: {
     SearchBar,
     PostCard,
+    CategoryBox,
   },
   data() {
     return {
       query: '',
+      categories: [],
     }
   },
   methods: {
     getQuery(value) {
       this.query = value
+    },
+    getCategories() {
+      this.categories = this.$page.categories.edges
     },
   },
   computed: {
@@ -71,11 +89,14 @@ export default {
       } else {
         const filtered = posts.filter((post) => {
           const regex = new RegExp(`${this.query}`, 'gi')
-          return post.node.title.match(regex) || post.node.title.match(regex)
+          return post.node.title.match(regex) || post.node.content.match(regex)
         })
         return filtered
       }
     },
+  },
+  mounted() {
+    this.getCategories()
   },
 }
 </script>

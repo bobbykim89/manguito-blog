@@ -49,7 +49,7 @@ export default {
   height: 200px !important;
   width: 100%;
   object-fit: cover;
-  object-position: 0% 0%;
+  object-position: 50% 0%;
 }
 
 .card-hover {
