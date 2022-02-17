@@ -122,7 +122,7 @@ export default {}
 
 @media (max-width: 576px) {
   .display-4 {
-    font-size: 2.7rem;
+    font-size: 2.4rem;
   }
 }
 </style>
