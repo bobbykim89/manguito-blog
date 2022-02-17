@@ -4,6 +4,7 @@
       :title="post.node.title"
       :img-src="post.node.cover.thumb"
       class="h-100 shadow card-hover"
+      img-alt="post-catd-image"
     >
       <b-card-text>
         <div v-if="categoryButton" class="text-right">
