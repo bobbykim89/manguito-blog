@@ -62,7 +62,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Manguito Blog - About',
+    title: 'About',
   },
 }
 </script>
