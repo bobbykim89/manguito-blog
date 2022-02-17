@@ -20,7 +20,7 @@
             <h2 class="display-4 mx-auto">About Manguito Blog</h2>
             <div class="mb-3 mx-auto mx-md-2">
               <p>Static Blog for Manguito</p>
-              <p>Version: 0.1.0(In Development)</p>
+              <p>Version: 0.1.0</p>
               <p>Made by: Bobby Kim</p>
             </div>
             <div class="d-flex mx-auto">

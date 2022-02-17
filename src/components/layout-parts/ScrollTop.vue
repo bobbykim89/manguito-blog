@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      if (window.scrollY >= 150) {
+      if (window.scrollY >= 300) {
         this.pageScroll = true
       } else {
         this.pageScroll = false

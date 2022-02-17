@@ -1,14 +1,42 @@
-# Default starter for Gridsome
+# Manguito Blog (v0.1.0)
 
-This is the project you get when you run `gridsome create new-project`.
+SSG blog webapp for Manguito using Gridsome with Strapi as backend API endpoint. Badkend repository cna be found here -> [Repository](https://github.com/bobbykim89/manguito-blog-backend)
 
-### 1. Install Gridsome CLI tool if you don't have
+## Scripts
 
-`npm install --global @gridsome/cli`
+```bash
+# install dependencies
+$ yarn install
 
-### 2. Create a Gridsome project
+# serve with hot reload at localhost:8080
+$ yarn develop
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+# build for production
+$ yarn build
+```
+
+## Dependencies
+
+axios\
+bootstrap-vue
+
+## Dev Dependencies
+
+sass\
+sass-loader
+
+## Changes
+
+1. Search posts using keywords in search bar. can get focus search bar by clicking magnifying glass button and clear search query by clicking clear button.
+2. Can display blog posts per categories by clicking either category box on the side or category button in post card component.
+3. Displays side by clicking red button in the right side of the screen
+4. Scroll to the top of page by clicking the button on the lower right side of screen, it is visible when you scroll down 300 pixels.
+5. Navbar background color changes from transparent to yellow color once you scroll down for 150 pixels from top of screen, and goes back to transparent background once you go above 150pixels below the top of screen.
+
+## Known Issues
+
+N/A
+
+## Update Log
+
+N/A
