@@ -61,7 +61,7 @@ export default {
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 10;
+  z-index: 50;
   transition: 0.4s;
   transition-timing-function: ease-in;
 }
@@ -76,5 +76,14 @@ export default {
 }
 .navlink-shadow:hover {
   color: #f2f2f2;
+}
+
+@media (max-width: 576px) {
+  .navbar-collapse {
+    background-color: rgba(253, 126, 20, 0.8);
+    border-radius: 0.5rem;
+    padding: 1rem 0;
+    margin: 1rem 0;
+  }
 }
 </style>
