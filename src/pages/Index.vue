@@ -26,7 +26,7 @@
       <hr class="w-25  hr-yellow" />
     </div>
     <Introduction />
-    <h1 class="display-1 text-center mb-5">
+    <h3 class="display-1 text-center mb-5">
       <span class="mr-3">Thanks for coming!</span>
       <g-image
         src="~/assets/images/logo.png"
@@ -35,7 +35,7 @@
         class="mt-3 mt-md-0"
         alt="logo"
       />
-    </h1>
+    </h3>
   </Layout>
 </template>
 
