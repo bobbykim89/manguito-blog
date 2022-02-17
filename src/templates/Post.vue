@@ -74,7 +74,12 @@ export default {
   metaInfo() {
     return {
       title: this.$page.post.title,
-      meta: [{ name: 'description', content: 'Single blog post' }],
+      meta: [
+        {
+          name: 'description',
+          content: `Blog post for ${this.$page.post.title}`,
+        },
+      ],
     }
   },
   data() {

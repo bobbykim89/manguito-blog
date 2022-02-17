@@ -18,4 +18,8 @@ export default function(Vue, { router, head, isClient }) {
     rel: 'stylesheet', // Material Icons CDN
     href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
   })
+  head.meta.push({
+    name: 'keywords',
+    content: 'Manguito, Peachfaced Lovebird, pet, parrot, lovebird, blog',
+  })
 }
