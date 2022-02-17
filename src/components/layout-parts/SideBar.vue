@@ -62,6 +62,11 @@ export default {}
   right: -2.8rem;
   top: 50%;
 }
+
+.side-button:hover {
+  border: 3px solid #ffc107;
+}
+
 .sidebar-styling {
   border-left: 0.6rem solid #ffc107;
   height: auto;
