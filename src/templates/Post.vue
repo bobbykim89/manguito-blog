@@ -70,6 +70,13 @@ query ($path: String!) {
 
 <script>
 export default {
+  name: 'Post',
+  metaInfo() {
+    return {
+      title: this.$page.post.title,
+      meta: [{ name: 'description', content: 'Single blog post' }],
+    }
+  },
   data() {
     return {
       showAlert: false,

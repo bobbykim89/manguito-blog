@@ -62,7 +62,7 @@ import CategoryBox from '~/components/post-parts/CategoryBox.vue'
 export default {
   metaInfo: {
     title: 'Manguito Blog - Blog',
-    categories: [],
+    meta: [{ name: 'description', content: 'Blog page for Manguito Blog' }],
   },
   components: {
     SearchBar,

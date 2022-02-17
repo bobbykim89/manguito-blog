@@ -37,7 +37,7 @@ export default {}
 
 <style scoped>
 .sticky-nav {
-  position: absolute;
+  position: fixed;
   left: 0px;
   top: 0px;
   z-index: 10;

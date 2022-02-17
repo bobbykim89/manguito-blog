@@ -9,9 +9,8 @@
     <b-carousel-slide v-for="url in urls.slice(0, 5)" :key="url.id">
       <h1 class="display-3">Welcome to Manguito Blog!</h1>
       <p class="mb-md-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia at
-        laboriosam culpa, ab modi laudantium debitis ipsum atque obcaecati
-        animi.
+        Hello! Let me introduce you my tiny friend Manguito! He is tiny
+        peachcaced lovebird we rescued soon after we moved to Arizona!
       </p>
       <template #img>
         <g-image

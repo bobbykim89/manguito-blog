@@ -18,7 +18,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  metaInfo: {
+    title: 'Manguito Blog - 404 Page Not Found',
+    meta: [
+      { name: 'description', content: 'Oops I think something went wrong!' },
+    ],
+  },
+}
 </script>
 
 <style scoped>
