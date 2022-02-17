@@ -5,18 +5,30 @@
       <div class="container">
         <div class="row my-5">
           <div class="col-lg-9 order-2 order-md-1">
-            <b-card-group v-if="getPosts">
-              <PostCard
-                v-for="post in getPosts"
-                :key="post.node.id"
-                :post="post"
-                :categoryButton="true"
-                class="col-md-6 col-lg-4"
-              />
+            <b-card-group
+              v-if="getPosts"
+              class="row row-cols-1 row-cols-md-2 row-cols-lg-3"
+            >
+              <g-link
+                v-for="(post, index) in getPosts"
+                :key="index"
+                :to="post.node.path"
+                class="mb-3"
+              >
+                <card-degree-image
+                  :image-source="post.node.cover.thumb"
+                  :image-alt="post.node.title"
+                  :title="post.node.title"
+                  :label="post.node.category.name"
+                  label-background="danger"
+                  border-variant="gray-2"
+                  class="mx-2 shadow"
+                />
+              </g-link>
             </b-card-group>
           </div>
           <div class="col-lg-3 order-1 order-md-2">
-            <CategoryBox :categories="categories" />
+            <rds-category-box :categories="categories" />
           </div>
         </div>
       </div>
@@ -59,6 +71,8 @@
 import SearchBar from '~/components/post-parts/SearchBar.vue'
 import PostCard from '~/components/post-parts/PostCard'
 import CategoryBox from '~/components/post-parts/CategoryBox.vue'
+import CardDegreeImage from '@rds/card-degree-image'
+import RDSCategoryBox from '~/components/post-parts/RDSCategoryBox.vue'
 export default {
   metaInfo: {
     title: 'Blog',
@@ -68,6 +82,8 @@ export default {
     SearchBar,
     PostCard,
     CategoryBox,
+    'card-degree-image': CardDegreeImage,
+    'rds-category-box': RDSCategoryBox,
   },
   data() {
     return {

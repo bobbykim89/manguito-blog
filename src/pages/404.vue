@@ -31,7 +31,7 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 .content-area {
-  background-color: #ffc107;
+  background-color: #ffc627;
   min-height: 85vh;
   font-family: 'Permanent Marker', cursive;
 }

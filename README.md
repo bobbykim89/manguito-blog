@@ -18,7 +18,8 @@ $ yarn build
 ## Dependencies
 
 axios\
-bootstrap-vue
+bootstrap-vue\
+@rds/asuo-theme
 
 ## Dev Dependencies
 

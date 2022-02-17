@@ -9,18 +9,30 @@
       <div class="container">
         <div class="row my-5">
           <div class="col-lg-9 order-2 order-md-1">
-            <b-card-group v-if="getPosts">
-              <PostCard
-                v-for="post in getPosts"
-                :key="post.node.id"
-                :post="post"
-                :categoryButton="false"
-                class="col-md-6 col-lg-4"
-              />
+            <b-card-group
+              v-if="getPosts"
+              class="row row-cols-1 row-cols-md-2 row-cols-lg-3"
+            >
+              <g-link
+                v-for="(post, index) in getPosts"
+                :key="index"
+                :to="post.node.path"
+                class="mb-3"
+              >
+                <card-degree-image
+                  :image-source="post.node.cover.thumb"
+                  :image-alt="post.node.title"
+                  :title="post.node.title"
+                  :display-label="false"
+                  label-background="danger"
+                  border-variant="gray-2"
+                  class="mx-2 shadow"
+                />
+              </g-link>
             </b-card-group>
           </div>
           <div class="col-lg-3 order-1 order-md-2">
-            <CategoryBox :categories="categories" />
+            <rds-category-box :categories="categories" />
           </div>
         </div>
       </div>
@@ -60,6 +72,8 @@ query ($path: String!) {
 <script>
 import CategoryBox from '~/components/post-parts/CategoryBox.vue'
 import PostCard from '~/components/post-parts/PostCard.vue'
+import RDSCategoryBox from '~/components/post-parts/RDSCategoryBox.vue'
+import CardDegreeImage from '@rds/card-degree-image'
 export default {
   name: 'Category',
   metaInfo() {
@@ -76,6 +90,8 @@ export default {
   components: {
     CategoryBox,
     PostCard,
+    'rds-category-box': RDSCategoryBox,
+    'card-degree-image': CardDegreeImage,
   },
   data() {
     return {
@@ -120,7 +136,7 @@ export default {
 
 .title-bar {
   padding: 10% 0 3% 10%;
-  background-color: #ffc107;
+  background-color: #ffc627;
 }
 
 .display-2 {
@@ -133,7 +149,7 @@ export default {
 @media (max-width: 767px) {
   .title-bar {
     padding: 20% 0 5% 5%;
-    background-color: #ffc107;
+    background-color: #ffc627;
   }
   .display-2 {
     font-size: 2.6rem;

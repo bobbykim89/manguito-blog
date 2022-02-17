@@ -73,7 +73,7 @@ export default {
 }
 
 .nav-scroll {
-  background-color: rgba(255, 193, 7, 0.7);
+  background-color: rgba(255, 198, 39, 0.8);
 }
 
 .navlink-shadow {

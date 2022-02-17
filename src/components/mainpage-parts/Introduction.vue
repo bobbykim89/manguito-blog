@@ -92,12 +92,12 @@ export default {}
 
 .intro-svg-top polygon,
 .intro-svg-bottom polygon {
-  color: #ffc107;
+  color: #ffc627;
   fill: currentColor;
 }
 
 .orange-box {
-  background-color: #ffc107;
+  background-color: #ffc627;
 }
 .hr-white {
   border-top: 0.6rem solid;
@@ -115,7 +115,7 @@ export default {}
   margin-top: 1rem;
 }
 .display-4:hover {
-  color: #ffc107;
+  color: #ffc627;
   background-color: #fff;
   transition: 0.4s;
   transition-timing-function: ease-out;
