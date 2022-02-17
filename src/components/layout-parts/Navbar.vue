@@ -6,7 +6,13 @@
     :class="[navScroll ? 'nav-scroll' : '', 'sticky-nav w-100']"
   >
     <b-navbar-brand href="/" class="ml-2">
-      <g-image src="~/assets/images/logo.png" width="30" class="mr-2" />
+      <g-image
+        src="~/assets/images/logo.png"
+        width="30"
+        height="30"
+        class="mr-2"
+        alt="logo"
+      />
       <span class="font-weight-bolder navlink-shadow">
         MANGUITO BLOG</span
       ></b-navbar-brand

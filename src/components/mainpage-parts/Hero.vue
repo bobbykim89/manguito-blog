@@ -1,11 +1,5 @@
 <template>
-  <b-carousel
-    v-model="slide"
-    :interval="5000"
-    indicators
-    background="#ababab"
-    class="shadow"
-  >
+  <b-carousel v-model="slide" :interval="5000" indicators class="shadow">
     <b-carousel-slide v-for="url in urls.slice(0, 5)" :key="url.id">
       <h1 class="display-3">Welcome to Manguito Blog!</h1>
       <p class="mb-md-5">
@@ -16,6 +10,7 @@
         <g-image
           :src="url.url"
           class="carousel-image d-block img-fluid w-100"
+          alt="hero-image"
         />
       </template>
     </b-carousel-slide>
