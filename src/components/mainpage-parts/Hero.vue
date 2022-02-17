@@ -40,7 +40,7 @@ export default {
 
 <style scoped>
 .carousel-image {
-  max-height: 80vh !important;
+  height: 80vh !important;
   width: 100%;
   object-fit: cover;
   object-position: 0% 0%;
