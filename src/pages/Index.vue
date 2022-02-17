@@ -19,6 +19,7 @@
           v-for="post in posts.slice(0, 4)"
           :key="post.node.id"
           :post="post"
+          :categoryButton="true"
           class="col-md-4 col-lg-3"
         />
       </b-card-group>

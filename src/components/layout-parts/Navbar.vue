@@ -3,7 +3,7 @@
     toggleable="lg"
     type="dark"
     varianr="transparent"
-    class="sticky-nav w-100"
+    :class="[navScroll ? 'nav-scroll' : '', 'sticky-nav w-100']"
   >
     <b-navbar-brand href="/" class="ml-2">
       <g-image src="~/assets/images/logo.png" width="30" class="mr-2" />
@@ -32,7 +32,28 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      navScroll: false,
+    }
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY >= 150) {
+        this.navScroll = true
+      } else {
+        this.navScroll = false
+      }
+    },
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+}
 </script>
 
 <style scoped>
@@ -41,6 +62,12 @@ export default {}
   left: 0px;
   top: 0px;
   z-index: 10;
+  transition: 0.4s;
+  transition-timing-function: ease-in;
+}
+
+.nav-scroll {
+  background-color: rgba(255, 193, 7, 0.7);
 }
 
 .navlink-shadow {
@@ -49,10 +76,5 @@ export default {}
 }
 .navlink-shadow:hover {
   color: #f2f2f2;
-}
-@media (max-width: 576px) {
-  nav {
-    background-color: rgba(255, 193, 7, 0.5);
-  }
 }
 </style>
