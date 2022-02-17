@@ -1,12 +1,12 @@
 <template>
   <b-carousel
     v-model="slide"
-    :interval="4000"
+    :interval="5000"
     indicators
     background="#ababab"
     class="shadow"
   >
-    <b-carousel-slide v-for="url in urls" :key="url.id">
+    <b-carousel-slide v-for="url in urls.slice(0, 5)" :key="url.id">
       <h1 class="display-3">Welcome to Manguito Blog!</h1>
       <p class="mb-md-5">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia at

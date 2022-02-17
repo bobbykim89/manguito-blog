@@ -6,7 +6,7 @@
       class="h-100 shadow card-hover"
     >
       <b-card-text>
-        <div class="text-right">
+        <div v-if="categoryButton" class="text-right">
           <b-button
             :to="`/blog/category/${post.node.category.id}`"
             class="mb-2 display-inline-block text-right text-white"
@@ -20,7 +20,7 @@
         </p>
       </b-card-text>
       <b-button
-        :to="`/blog/post/${post.node.id}`"
+        @click="$router.push(post.node.path)"
         variant="danger"
         class="w-100"
         >Read Post</b-button
@@ -34,6 +34,10 @@ export default {
   props: {
     post: {
       type: Object,
+      required: true,
+    },
+    categoryButton: {
+      type: Boolean,
       required: true,
     },
   },

@@ -10,6 +10,7 @@
                 v-for="post in getPosts"
                 :key="post.node.id"
                 :post="post"
+                :categoryButton="true"
                 class="col-md-6 col-lg-4"
               />
             </b-card-group>
@@ -28,6 +29,7 @@
     posts: allPost {
       edges {
         node {
+          path
           id
           title
           content
@@ -42,13 +44,13 @@
       }
     }
     categories: allCategory (sortBy: "date", order: ASC) {
-    edges {
-      node {
-        name
-        id
+      edges {
+        node {
+          name
+          id
+        }
       }
     }
-  }
   }
 
 </page-query>

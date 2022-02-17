@@ -18,11 +18,17 @@
     <b-collapse id="categorybox" visible>
       <div class="card-body">
         <div class="text-center">
+          <g-link to="/blog" class="category-link">
+            <span>
+              All Posts
+            </span>
+            <hr class="w-50" />
+          </g-link>
           <g-link
             v-for="category in categories"
             :key="category.node.id"
-            :to="`/blog/category/${category.node.id}`"
-            class="btext-center category-link"
+            :to="`/blog/category/${category.node.id}/`"
+            class="category-link"
           >
             <span>
               {{ category.node.name }}
