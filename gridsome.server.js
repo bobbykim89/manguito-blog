@@ -60,39 +60,4 @@ module.exports = function(api) {
       })
     }
   })
-
-  // api.createPages(async ({ graphql, createPage }) => {
-  //   // Use the Pages API here: https://gridsome.org/docs/pages-api/
-  //   const { data } = await graphql(`
-  //     {
-  //       allPost {
-  //         edges {
-  //           node {
-  //             path
-  //             id
-  //             title
-  //             cover {
-  //               large
-  //               medium
-  //               thumb
-  //             }
-  //             content
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `)
-
-  //   const posts = data.allPost.edges
-
-  //   posts.forEach((post) => {
-  //     createPage({
-  //       path: post.node.path,
-  //       component: './src/templates/Post.vue',
-  //       context: {
-  //         id: post.node.id,
-  //       },
-  //     })
-  //   })
-  // })
 }
