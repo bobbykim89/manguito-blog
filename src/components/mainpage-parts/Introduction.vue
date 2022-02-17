@@ -20,6 +20,7 @@
             <g-image
               src="~/assets/images/manguito.jpeg"
               class="w-100 shadow rounded my-4"
+              alt="manguito"
             />
           </div>
           <div class="col-lg-6 mx-auto">

@@ -13,7 +13,7 @@
         </p>
         <hr class="w-25  hr-yellow" />
       </blockquote>
-      <h1 class="display-4 mt-5 ml-2">Latest Posts</h1>
+      <h2 class="display-4 mt-5 ml-2">Latest Posts</h2>
       <b-card-group class="mt-4 mb-5">
         <PostCard
           v-for="post in posts.slice(0, 4)"
@@ -26,7 +26,7 @@
       <hr class="w-25  hr-yellow" />
     </div>
     <Introduction />
-    <h3 class="display-1 text-center mb-5">
+    <h5 class="display-1 text-center mb-5">
       <span class="mr-3">Thanks for coming!</span>
       <g-image
         src="~/assets/images/logo.png"
@@ -35,7 +35,7 @@
         class="mt-3 mt-md-0"
         alt="logo"
       />
-    </h3>
+    </h5>
   </Layout>
 </template>
 
