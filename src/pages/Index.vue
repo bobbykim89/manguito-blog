@@ -37,6 +37,7 @@
     posts: allPost {
       edges {
         node {
+          path
           id
           title
           content

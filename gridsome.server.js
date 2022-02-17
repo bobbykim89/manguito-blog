@@ -10,14 +10,22 @@ const { default: axios } = require('axios')
 module.exports = function(api) {
   api.loadSource(async (actions) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-    const { data } = await axios.get(
+    const posts = await axios.get(
       'https://manguito-blog-backend.herokuapp.com/posts'
     )
-    const postCollection = actions.addCollection('Post')
 
-    for (const post of data) {
+    const categories = await axios.get(
+      'https://manguito-blog-backend.herokuapp.com/categories'
+    )
+
+    const postCollection = actions.addCollection({
+      typeName: 'Post',
+    })
+
+    for (const post of posts.data) {
       postCollection.addNode({
-        id: post.id,
+        // uid: post.uid,
+        id: post.uid,
         title: post.title,
         content: post.content,
         user: {
@@ -25,7 +33,7 @@ module.exports = function(api) {
           username: post.user.username,
         },
         category: {
-          id: post.category.id,
+          id: post.category.uid,
           name: post.category.name,
         },
         cover: {
@@ -38,14 +46,14 @@ module.exports = function(api) {
       })
     }
 
-    const categories = await axios.get(
-      'https://manguito-blog-backend.herokuapp.com/categories'
-    )
-    const categoryCollection = actions.addCollection('Category')
+    const categoryCollection = actions.addCollection({
+      typeName: 'Category',
+    })
 
     for (const category of categories.data) {
       categoryCollection.addNode({
-        id: category.id,
+        // uid: category.uid,
+        id: category.uid,
         name: category.name,
         posts: [...category.posts],
         date: category.created_at,
@@ -53,7 +61,38 @@ module.exports = function(api) {
     }
   })
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
-  })
+  // api.createPages(async ({ graphql, createPage }) => {
+  //   // Use the Pages API here: https://gridsome.org/docs/pages-api/
+  //   const { data } = await graphql(`
+  //     {
+  //       allPost {
+  //         edges {
+  //           node {
+  //             path
+  //             id
+  //             title
+  //             cover {
+  //               large
+  //               medium
+  //               thumb
+  //             }
+  //             content
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `)
+
+  //   const posts = data.allPost.edges
+
+  //   posts.forEach((post) => {
+  //     createPage({
+  //       path: post.node.path,
+  //       component: './src/templates/Post.vue',
+  //       context: {
+  //         id: post.node.id,
+  //       },
+  //     })
+  //   })
+  // })
 }
