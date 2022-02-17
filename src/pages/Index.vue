@@ -61,7 +61,8 @@ import PostCard from '~/components/post-parts/PostCard.vue'
 import Introduction from '~/components/mainpage-parts/Introduction.vue'
 export default {
   metaInfo: {
-    title: 'Manguito Blog - Home',
+    title: 'Manguito Blog',
+    meta: [{ name: 'description', content: 'Welcome to Manguito Blog!' }],
   },
   components: {
     Hero,

@@ -6,22 +6,8 @@
 
 module.exports = {
   siteName: 'Manguito Blog',
-  plugins: [
-    // {
-    //   use: '@gridsome/source-strapi',
-    //   options: {
-    //     apiURL: 'https://manguito-blog-backend.herokuapp.com/',
-    //     queryLimit: 1000, // Defaults to 100
-    //     contentTypes: ['post', 'category'],
-    //     // Possibility to login with a Strapi user,
-    //     // when content types are not publicly available (optional).
-    //     loginData: {
-    //       identifier: '',
-    //       password: '',
-    //     },
-    //   },
-    // },
-  ],
+  siteDescription: 'Little blog for my tiny friend Manguito',
+  plugins: [],
   icon: './src/favicon.png',
   templates: {
     Post: [

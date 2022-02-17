@@ -61,6 +61,18 @@ query ($path: String!) {
 import CategoryBox from '~/components/post-parts/CategoryBox.vue'
 import PostCard from '~/components/post-parts/PostCard.vue'
 export default {
+  name: 'Category',
+  metaInfo() {
+    return {
+      title: this.$page.category.name,
+      meta: [
+        {
+          name: 'description',
+          content: `Blog posts in ${this.$page.category.name} category`,
+        },
+      ],
+    }
+  },
   components: {
     CategoryBox,
     PostCard,
