@@ -37,6 +37,7 @@
               alt="logo"
               class="mr-2 mb-1"
               width="30"
+              height="30"
             />
             <span class="font-weight-bolder"
               >MANGUITO BLOG &copy; {{ year.getFullYear() }}</span

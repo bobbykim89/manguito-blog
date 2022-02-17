@@ -28,14 +28,20 @@
     <Introduction />
     <h1 class="display-1 text-center mb-5">
       <span class="mr-3">Thanks for coming!</span>
-      <g-image src="~/assets/images/logo.png" width="80" class="mt-3 mt-md-0" />
+      <g-image
+        src="~/assets/images/logo.png"
+        width="80"
+        height="80"
+        class="mt-3 mt-md-0"
+        alt="logo"
+      />
     </h1>
   </Layout>
 </template>
 
 <page-query>
   query {
-    posts: allPost {
+    posts: allPost (sortBy: "date", order: DESC) {
       edges {
         node {
           path

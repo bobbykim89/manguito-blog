@@ -20,7 +20,11 @@
           <g-image src="~/assets/images/manguitopage.png" class="card-img" />
           <div class="card-body">
             <h5 class="card-title">Manguito Page</h5>
-            <a href="https://manguitopage.herokuapp.com/" target="_blank">
+            <a
+              href="https://manguitopage.herokuapp.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <b-button variant="danger" class="w-100">Go to Page</b-button>
             </a>
           </div>
@@ -30,7 +34,11 @@
           <g-image src="~/assets/images/cookbook.png" class="card-img" />
           <div class="card-body">
             <h5 class="card-title">Bobby's Cookbook</h5>
-            <a href="https://bobby-cookbook.vercel.app/" target="_blank">
+            <a
+              href="https://bobby-cookbook.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <b-button variant="danger" class="w-100">Go to Page</b-button>
             </a>
           </div>
@@ -40,7 +48,11 @@
           <g-image src="~/assets/images/stocktrack.png" class="card-img" />
           <div class="card-body">
             <h5 class="card-title">Stock Tracker</h5>
-            <a href="https://stock-track-woad.vercel.app/" target="_blank">
+            <a
+              href="https://stock-track-woad.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <b-button variant="danger" class="w-100">Go to Page</b-button>
             </a>
           </div>

@@ -26,7 +26,7 @@
 
 <page-query>
   query {
-    posts: allPost {
+    posts: allPost (sortBy: "date", order: DESC) {
       edges {
         node {
           path
