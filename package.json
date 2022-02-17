@@ -8,6 +8,10 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@rds/asuo-theme": "^4.8.1",
+    "@rds/card-degree-image": "^3.0.0",
+    "@rds/section-atlas": "^2.0.4",
+    "@rds/section-parallax-atlas": "^1.1.4",
     "axios": "^0.26.0",
     "bootstrap-vue": "^2.21.2",
     "gridsome": "^0.7.0"

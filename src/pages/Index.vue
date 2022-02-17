@@ -1,6 +1,6 @@
 <template>
   <Layout class="content">
-    <Hero :urls="heroImages" class="mb-5" />
+    <Hero :urls="getHeroImages" class="mb-5" />
     <div class="container">
       <blockquote class="blockquote text-center">
         <p class="mb-4">
@@ -14,18 +14,46 @@
         <hr class="w-25  hr-yellow" />
       </blockquote>
       <h2 class="display-4 mt-5 ml-2">Latest Posts</h2>
-      <b-card-group class="mt-4 mb-5">
-        <PostCard
-          v-for="post in posts.slice(0, 4)"
-          :key="post.node.id"
-          :post="post"
-          :categoryButton="true"
-          class="col-md-4 col-lg-3"
-        />
+      <b-card-group
+        class="mt-4 mb-5 row row-cols-1 row-cols-md-2 row-cols-lg-4"
+      >
+        <g-link
+          v-for="(post, index) in posts.slice(0, 4)"
+          :key="index"
+          :to="post.node.path"
+        >
+          <card-degree-image
+            :image-source="post.node.cover.thumb"
+            :image-alt="post.node.title"
+            :title="post.node.title"
+            :label="post.node.category.name"
+            label-background="danger"
+            border-variant="gray-2"
+            class="mx-2 shadow"
+          />
+        </g-link>
       </b-card-group>
       <hr class="w-25  hr-yellow" />
     </div>
     <Introduction />
+    <section-atlas
+      :image="require('~/assets/images/about.jpeg')"
+      title="Peachfaced Lovebirds?"
+    >
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae,
+          possimus repellendus consequuntur voluptatibus, ea exercitationem
+          necessitatibus quisquam aliquam aspernatur provident iste tempore fuga
+          minus blanditiis, tempora mollitia et dolore rem. Esse culpa tempora
+          voluptas officiis delectus maiores perferendis, suscipit odio quisquam
+          saepe enim voluptate et alias, illo cupiditate laborum asperiores nemo
+          nulla. Fugiat dolor unde aspernatur voluptas fuga, inventore non
+          voluptates ullam enim, itaque corporis labore quo facere quod, autem
+          hic optio repellendus ipsum!
+        </p>
+      </div>
+    </section-atlas>
     <h5 class="display-1 text-center mb-5">
       <span class="mr-3">Thanks for coming!</span>
       <g-image
@@ -66,6 +94,9 @@
 import Hero from '~/components/mainpage-parts/Hero.vue'
 import PostCard from '~/components/post-parts/PostCard.vue'
 import Introduction from '~/components/mainpage-parts/Introduction.vue'
+import CardDegreeImage from '@rds/card-degree-image'
+import SectionAtlas from '@rds/section-atlas'
+
 export default {
   metaInfo: {
     title: 'Home',
@@ -75,6 +106,8 @@ export default {
     Hero,
     PostCard,
     Introduction,
+    'card-degree-image': CardDegreeImage,
+    'section-atlas': SectionAtlas,
   },
   data() {
     return {
@@ -83,6 +116,22 @@ export default {
     }
   },
   methods: {
+    // getHeroImages() {
+    //   const posts = this.$page.posts.edges
+    //   const heroImages = posts.map((post) => {
+    //     return {
+    //       url: post.node.cover.large,
+    //       id: post.node.id,
+    //       title: post.node.title,
+    //     }
+    //   })
+    //   this.heroImages = heroImages
+    // },
+  },
+  mounted() {
+    this.posts = this.$page.posts.edges
+  },
+  computed: {
     getHeroImages() {
       const posts = this.$page.posts.edges
       const heroImages = posts.map((post) => {
@@ -92,12 +141,8 @@ export default {
           title: post.node.title,
         }
       })
-      this.heroImages = heroImages
+      return heroImages
     },
-  },
-  mounted() {
-    this.posts = this.$page.posts.edges
-    this.getHeroImages()
   },
 }
 </script>
@@ -107,14 +152,14 @@ export default {
   min-height: 85vh;
 }
 .hr-yellow {
-  border-top: 0.6rem solid;
-  color: rgb(253 224 71);
+  border-top: 0.3rem solid;
+  color: #ffc627;
 }
 .display-4 {
   display: inline-block;
   padding: 0 1rem;
   color: #fff;
-  background-color: #ffc107;
+  background-color: #ffc627;
   margin-top: 1rem;
 }
 

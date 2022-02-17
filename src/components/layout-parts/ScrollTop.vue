@@ -51,6 +51,6 @@ export default {
 }
 
 .scroll-top:hover {
-  color: #ffc107;
+  color: #ffc627;
 }
 </style>

@@ -3,6 +3,7 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 import BootstrapVue from 'bootstrap-vue'
+import '@rds/asuo-theme'
 import '~/assets/styles.scss'
 
 export default function(Vue, { router, head, isClient }) {

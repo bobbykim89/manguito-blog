@@ -69,7 +69,7 @@ export default {
 
 <style scoped>
 .content-area {
-  background-color: #ffc107;
+  background-color: #ffc627;
   min-height: 85vh;
 }
 .border-4 {

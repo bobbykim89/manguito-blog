@@ -1055,6 +1055,41 @@
     consola "^2.15.0"
     node-fetch "^2.6.1"
 
+"@rds/asuo-theme@^4.8.1":
+  version "4.8.1"
+  resolved "https://npm.edpl.us/@rds%2fasuo-theme/-/asuo-theme-4.8.1.tgz#c4896cdbde1efd99ffb006eb372446883ade2470"
+  integrity sha512-fBKqQQ5WnWbhP8PrPYM7Y7VPzs7K5QmR76Yg7Y9uIAsjwjOAUfr77MZnpjcZKmtmOF7N5Mf/YAaFf6GAOrDe5w==
+  dependencies:
+    bootstrap "4.5.3"
+    bootstrap-vue "2.21.2"
+
+"@rds/card-degree-image@^3.0.0":
+  version "3.0.0"
+  resolved "https://npm.edpl.us/@rds%2fcard-degree-image/-/card-degree-image-3.0.0.tgz#3eabac467b232cf866419f0de85a173cb57ab086"
+  integrity sha512-398S74IDumcx7ejpq65I/d9T38yL42nAt7WbhPxagqBgMbTysbzBennvR4UnfTcg5w7C0ut+jT3h/MtXaWVoQA==
+  dependencies:
+    bootstrap-vue "^2.21.2"
+
+"@rds/sb-constants@^2.5.0":
+  version "2.5.0"
+  resolved "https://npm.edpl.us/@rds%2fsb-constants/-/sb-constants-2.5.0.tgz#3af288b9e9383d2533e6da7858ece4fd3d7c3ace"
+  integrity sha512-IxUpfmiATGC4Eo6v5yDb2774hSCInmrSPMDSEHZZdkqg8kq9aPlWTtYpQa1ewOboQ3LRdCKxVF0fUxM4NHy8RA==
+
+"@rds/section-atlas@^2.0.4":
+  version "2.0.4"
+  resolved "https://npm.edpl.us/@rds%2fsection-atlas/-/section-atlas-2.0.4.tgz#976cbe5bdeed0c5ae4f696d7da6a6ebe2f47b7d6"
+  integrity sha512-itCNiPgnLyb4Tk1Eibw3qlOXe4f7BI17UK4anMLcd0MwnApJ/ivyB5gxMU6eipcKlja6ipU6cuyIgdS7qMsChw==
+  dependencies:
+    "@rds/sb-constants" "^2.5.0"
+
+"@rds/section-parallax-atlas@^1.1.4":
+  version "1.1.4"
+  resolved "https://npm.edpl.us/@rds%2fsection-parallax-atlas/-/section-parallax-atlas-1.1.4.tgz#08b71a9e94b422eb764205a8d702e284b9fa46cb"
+  integrity sha512-w5GM/K/CiiwKRABy9bP+sKlmGpa0ImeITQWziQkSh2Kng0xr3ECxS+rCX85C/CzqnPQu6ol7lLpqo1H5PApinA==
+  dependencies:
+    "@rds/sb-constants" "^2.5.0"
+    lozad "^1.15.0"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -1932,7 +1967,7 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
-bootstrap-vue@^2.21.2:
+bootstrap-vue@2.21.2, bootstrap-vue@^2.21.2:
   version "2.21.2"
   resolved "https://registry.yarnpkg.com/bootstrap-vue/-/bootstrap-vue-2.21.2.tgz#ec38f66c3a2205becccddb6158a991d96509ed0b"
   integrity sha512-0Exe+4MZysqhZNXIKf4TzkvXaupxh9EHsoCRez0o5Dc0J7rlafayOEwql63qXv74CgZO8E4U8ugRNJko1vMvNw==
@@ -1942,6 +1977,11 @@ bootstrap-vue@^2.21.2:
     popper.js "^1.16.1"
     portal-vue "^2.1.7"
     vue-functional-data-merge "^3.1.0"
+
+bootstrap@4.5.3:
+  version "4.5.3"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.5.3.tgz#c6a72b355aaf323920be800246a6e4ef30997fe6"
+  integrity sha512-o9ppKQioXGqhw8Z7mah6KdTYpNQY//tipnkxppWhPbiSWdD+1raYsnhwEZjkTHYbGee4cVQ0Rx65EhOY/HNLcQ==
 
 "bootstrap@>=4.5.3 <5.0.0":
   version "4.6.1"
@@ -5671,6 +5711,11 @@ lowercase-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-2.0.0.tgz#2603e78b7b4b0006cbca2fbcc8a3202558ac9479"
   integrity sha512-tqNXrS78oMOE73NMxK4EMLQsQowWf8jKooH9g7xPavRT706R6bkQJ6DY2Te7QukaZsulxa30wQ7bk0pm4XiHmA==
+
+lozad@^1.15.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/lozad/-/lozad-1.16.0.tgz#86ce732c64c69926ccdebb81c8c90bb3735948b4"
+  integrity sha512-JBr9WjvEFeKoyim3svo/gsQPTkgG/mOHJmDctZ/+U9H3ymUuvEkqpn8bdQMFsvTMcyRJrdJkLv0bXqGm0sP72w==
 
 lpad-align@^1.0.1:
   version "1.1.2"
