@@ -136,7 +136,7 @@ export default {
     background-color: #ffc107;
   }
   .display-2 {
-    font-size: 3rem;
+    font-size: 2.6rem;
   }
 }
 </style>

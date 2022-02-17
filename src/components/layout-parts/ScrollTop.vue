@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .scroll-top {
   position: fixed;
   background-color: rgba(220, 53, 69, 0.9);
@@ -47,6 +47,7 @@ export default {
   margin: 0 1rem 1rem 0;
   border-radius: 0.5rem;
   cursor: pointer;
+  z-index: 20;
 }
 
 .scroll-top:hover {
