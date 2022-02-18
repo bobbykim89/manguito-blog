@@ -30,14 +30,20 @@
             label-background="danger"
             border-variant="gray-2"
             class="mx-2 shadow"
-          />
+          >
+            <div>
+              <p class="card-content">
+                {{ post.node.content.substring(0, 50) + '...' }}
+              </p>
+            </div>
+          </card-degree-image>
         </g-link>
       </b-card-group>
       <hr class="w-25  hr-yellow" />
     </div>
     <Introduction />
     <section-atlas
-      :image="require('~/assets/images/about.jpeg')"
+      :image="require('~/assets/images/lovebird.jpg')"
       title="Peachfaced Lovebirds?"
     >
       <div>
@@ -112,7 +118,6 @@ export default {
   data() {
     return {
       posts: [],
-      heroImages: [],
     }
   },
   methods: {
@@ -161,6 +166,10 @@ export default {
   color: #fff;
   background-color: #ffc627;
   margin-top: 1rem;
+}
+
+.card-content {
+  color: #000;
 }
 
 @media (max-width: 576px) {

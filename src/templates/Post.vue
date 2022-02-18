@@ -1,6 +1,11 @@
 <template>
   <Layout>
     <div class="content-area">
+      <div v-if="showAlert" class="alert-bar w-100">
+        <b-alert variant="success" class="mx-4 text-center mt-4 text-dark" show>
+          <i class="fa-solid fa-circle-info mr-2"></i> Copied URL to Clipboard!
+        </b-alert>
+      </div>
       <section-parallax-atlas
         :bg-image-source="$page.post.cover.large"
         :title="capitalize($page.post.title)"
@@ -8,16 +13,7 @@
         <template #text>
           <div>
             <div class="title-underline mb-space-md"></div>
-            <div v-if="showAlert">
-              <b-alert
-                variant="success"
-                class="mx-2 text-center mt-4 text-dark"
-                show
-              >
-                <i class="fa-solid fa-circle-info mr-2"></i> Copied URL to
-                Clipboard!
-              </b-alert>
-            </div>
+
             <div
               class="d-inline-block mb-4 bg-light border rounded shadow py-2 px-3 items-center"
             >
@@ -143,12 +139,22 @@ export default {
   padding: 2.5rem;
 }
 
+.alert-bar {
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  padding: 3rem 4rem 0 4rem;
+}
+
 @media (max-width: 767px) {
   .display-2 {
     font-size: 2.8rem;
   }
   .text-area {
     padding: 2rem;
+  }
+  .alert-bar {
+    padding: 3rem 0 0 0;
   }
 }
 </style>
