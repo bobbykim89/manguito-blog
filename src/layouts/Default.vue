@@ -1,7 +1,11 @@
 <template>
-  <div>
+  <div class="wrapper">
     <Navbar />
-    <slot />
+    <transition name="fade" appear>
+      <main>
+        <slot />
+      </main>
+    </transition>
     <SideBar />
     <ScrollTop />
     <Footer />
@@ -23,4 +27,12 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+</style>
